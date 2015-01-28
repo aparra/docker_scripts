@@ -19,6 +19,4 @@ if [[ "$DEBUG" ]]; then
     sed -i 's/DEBUG *= *False/DEBUG=True/' "$CONFFILE"
 fi
 
-cat "$CONFFILE"
-
 exec uwsgi --ini /uwsgi.ini
