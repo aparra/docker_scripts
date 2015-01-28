@@ -1,0 +1,5 @@
+#!/bin/sh
+REPOS="$1"
+REV="$2"
+echo "create ticket $REV" >> /tmp/reviewboard.log
+/usr/bin/python /vmspace/workspace/teste/hooks/postcommit-review.py "$REPOS" "$REV" >> /tmp/reviewboard.log
