@@ -1,3 +1,7 @@
 # Create a data container
 docker run -v /.ssh -v /media --name rb-data busybox true
-docker run -it --name review_board --volumes-from rb-data -p 8000:8000 review_board:0.1 /start.sh -D FOREGROUND
+
+# Build / run review board container
+docker build -t review_board:0.1 .
+docker run --name review_board -d --volumes-from rb-data -p 8000:8000 review_board:0.1 /start.sh
+
