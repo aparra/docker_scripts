@@ -1,0 +1,2 @@
+docker build --no-cache=true -t svn_server:0.1 .
+docker run --name svn_server -d svn_server:0.1 /usr/sbin/apache2ctl
