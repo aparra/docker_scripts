@@ -4,8 +4,8 @@
 POSTREVIEW_PATH = "/usr/local/bin/"
 
 # Username and password for Review Board
-USERNAME = 'ericsson'
-PASSWORD = 'ericsson'
+USERNAME = 'admin'
+PASSWORD = 'admin'
 
 # If true, runs rbt in debug mode and outputs its diff
 DEBUG = False
@@ -94,7 +94,7 @@ def main():
                                        svn.core.SVN_PROP_REVISION_AUTHOR)
 
     if not author:
-       author = "ericsson"    
+       author = "admin"    
 
     # check whether to create a review, based on presence of word
     # 'review' with prefix
@@ -156,7 +156,6 @@ def main():
 
     # other parameters for postreview
     repository_url  = '--repository-url=file://' + repos
-    server          = '--server=' + re.sub('tcp', 'http', os.environ["REVIEW_BOARD_PORT_8000_TCP"])
     password        = '--password=' + PASSWORD
     username        = '--username=' + USERNAME
     description     = "--description=(In [%s]) %s" % (rev, log)
@@ -164,7 +163,7 @@ def main():
     revision        = '%s %s' % (prevrev, rev)
 
     # common arguments
-    args = [server, repository_url, username, password, publish,
+    args = [repository_url, username, password, publish,
             submitas, base_path, reviewid]
 
     # filter out any potentially blank args, which will confuse rbt
