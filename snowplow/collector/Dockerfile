@@ -6,16 +6,13 @@ LABEL maintainer="ander.pp@gmail.com"
 # It should be used to test unrelesed versions.
 
 # The version of the collector to download.
-ENV COLLECTOR_VERSION="0.15.0"
+ENV COLLECTOR_VERSION="0.16.0"
 
 # The targeted platform
 ENV PLATFORM="kinesis"
 
-# The name of the archive to download.
-ENV ARCHIVE="snowplow_scala_stream_collector_${PLATFORM}_${COLLECTOR_VERSION}.zip"
-
 # Install the Scala Stream Collector.
-COPY snowplow-stream-collector-kinesis-0.15.0.jar ${SNOWPLOW_BIN_PATH}
+COPY snowplow-stream-collector-kinesis-0.16.0.jar ${SNOWPLOW_BIN_PATH}
 
 # Port used by the collector.
 EXPOSE 8080
